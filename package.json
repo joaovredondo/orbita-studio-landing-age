@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:link": "npx supabase link --project-ref mtncohzdymxcxaguvugl",
+    "db:push": "npx supabase db push",
+    "db:seed": "tsx scripts/seed.ts",
+    "db:setup": "npm run db:link && npm run db:push && npm run db:seed"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.3",
@@ -21,8 +25,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
