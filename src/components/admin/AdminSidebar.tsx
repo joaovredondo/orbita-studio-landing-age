@@ -3,19 +3,25 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { LayoutDashboard, FolderOpen, FileText, User, LogOut } from 'lucide-react';
+import {
+  LayoutDashboard, Users, FolderOpen, FileText, Settings, LogOut, Shield,
+} from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
 const navItems = [
-  { href: '/dashboard',           label: 'Dashboard',     Icon: LayoutDashboard },
-  { href: '/dashboard/projetos',  label: 'Meus Projetos', Icon: FolderOpen      },
-  { href: '/dashboard/orcamento', label: 'Orçamentos',    Icon: FileText        },
-  { href: '/dashboard/perfil',    label: 'Perfil',        Icon: User            },
+  { href: '/admin',               label: 'Visão Geral',  Icon: LayoutDashboard, exact: true },
+  { href: '/admin/clientes',      label: 'Clientes',     Icon: Users            },
+  { href: '/admin/projetos',      label: 'Projetos',     Icon: FolderOpen       },
+  { href: '/admin/orcamentos',    label: 'Orçamentos',   Icon: FileText         },
+  { href: '/admin/configuracoes', label: 'Configurações',Icon: Settings         },
 ];
 
-export const Sidebar = () => {
+export const AdminSidebar = () => {
   const pathname = usePathname();
   const router   = useRouter();
+
+  const isActive = (href: string, exact?: boolean) =>
+    exact ? pathname === href : pathname.startsWith(href);
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -25,28 +31,33 @@ export const Sidebar = () => {
   };
 
   return (
-    <aside className="dash-sidebar">
+    <aside className="dash-sidebar dash-sidebar--admin">
       <div className="dash-sidebar-inner">
         <Link href="/" className="dash-brand">
           <span className="logo-mark" aria-hidden="true" />
           <span className="dash-brand-name">
-            Órbita <span className="logo-studio">Studio</span>
+            Órbita <span className="logo-studio">Admin</span>
           </span>
         </Link>
 
+        <div className="admin-role-badge">
+          <Shield size={12} />
+          Painel Admin
+        </div>
+
         <nav className="dash-nav">
-          {navItems.map(({ href, label, Icon }) => {
-            const isActive = pathname === href;
+          {navItems.map(({ href, label, Icon, exact }) => {
+            const active = isActive(href, exact);
             return (
               <Link
                 key={href}
                 href={href}
-                className={`dash-nav-item${isActive ? ' active' : ''}`}
+                className={`dash-nav-item${active ? ' active' : ''}`}
               >
-                {isActive && (
+                {active && (
                   <motion.div
                     className="dash-nav-indicator"
-                    layoutId="dash-nav-indicator"
+                    layoutId="admin-nav-indicator"
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
