@@ -23,6 +23,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Claude Code local config
+.claude/
+
 # Build
 dist/
 build/

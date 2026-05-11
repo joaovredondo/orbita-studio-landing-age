@@ -99,7 +99,7 @@ export const HeroSection = () => {
             {titleLines.map((line, i) => (
               <motion.span
                 key={i}
-                className={`hero-word${line.highlight ? ' text-gradient' : ''}`}
+                className={`hero-word${line.highlight ? ' text-accent' : ''}`}
                 custom={i}
                 initial="hidden"
                 animate="visible"

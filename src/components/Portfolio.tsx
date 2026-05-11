@@ -68,7 +68,7 @@ export const Portfolio = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            Trabalhos em <span className="text-gradient">Destaque</span>
+            Trabalhos em <span className="text-accent">Destaque</span>
           </h2>
           <p className="section-subtitle">
             Alguns projetos dos últimos dois anos. Clique nas imagens para ver mais detalhes.

@@ -120,7 +120,7 @@ export const ProcessTimeline = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            Como <span className="text-gradient">funciona</span>
+            Como <span className="text-accent">funciona</span>
           </h2>
           <p className="section-subtitle">
             Começa com uma conversa. Termina com o produto no ar.

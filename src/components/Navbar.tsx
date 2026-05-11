@@ -34,7 +34,7 @@ export const Navbar = () => {
         {/* Brand */}
         <Link href="/" className="navbar-logo">
           <span className="logo-mark" aria-hidden="true" />
-          <span className="text-gradient">Órbita</span>
+          <span>Órbita</span>
           <span className="logo-studio">Studio</span>
         </Link>
 

@@ -8,7 +8,7 @@ export const Footer = () => {
           <div className="footer-brand">
             <Link href="/" className="footer-logo">
               <span className="logo-mark" aria-hidden="true" />
-              <span className="text-gradient">Órbita</span>
+              <span>Órbita</span>
               <span className="logo-studio">Studio</span>
             </Link>
             <p className="footer-description">
@@ -49,7 +49,7 @@ export const Footer = () => {
         <div className="footer-bottom">
           <p>
             &copy; {new Date().getFullYear()}{' '}
-            <span className="text-gradient">Órbita Studio</span>
+            <span>Órbita Studio</span>
             {' '}· Todos os direitos reservados · João Victor Redondo
           </p>
         </div>

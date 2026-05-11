@@ -81,7 +81,7 @@ export const Services = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            O que <span className="text-gradient">ofereço</span>
+            O que <span className="text-accent">ofereço</span>
           </h2>
           <p className="section-subtitle">
             Do briefing ao deploy — desenvolvimento web, backend, mobile e infra. Código limpo do início ao fim.

@@ -113,7 +113,7 @@ export const About = () => {
             </div>
 
             <h2 className="about-name">João Victor Redondo</h2>
-            <p className="about-role text-gradient">Desenvolvedor Full Stack</p>
+            <p className="about-role text-accent">Desenvolvedor Full Stack</p>
 
             <p className="about-text">
               Comecei no front-end por necessidade — queria melhorar a interface de um projeto pessoal
